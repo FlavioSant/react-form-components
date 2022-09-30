@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use '../styles/colors.scss';
+@use '../styles/typography.scss';
+
+.fieldset-container {
+  border: 1px solid colors.$gray400;
+  border-radius: 4px;
+  padding: 1rem;
+  width: 100%;
+
+  legend {
+    color: colors.$title;
+    font-size: map.get(typography.$sizes, 'subheading');
+    font-weight: map.get(typography.$weights, 'subheading');
+    line-height: map.get(typography.$line-heights, 'subheading');
+  }
+}

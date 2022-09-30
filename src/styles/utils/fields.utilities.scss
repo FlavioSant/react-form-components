@@ -1,0 +1,13 @@
+@use '../colors.scss';
+
+.is-errored {
+  border-color: colors.$error !important;
+}
+
+.is-filled {
+  border-color: colors.$success !important;
+}
+
+.is-focused {
+  border-color: colors.$gray400 !important;
+}

@@ -1,0 +1,161 @@
+@use '../colors.scss';
+
+/* BUTTONS STYLES */
+
+.btn-primary {
+  background: colors.$primary;
+  border: 1px solid colors.$primary;
+  color: colors.$white;
+
+  &:active {
+    background-color: darken(colors.$primary, 10%);
+    border-color: darken(colors.$primary, 10%);
+  }
+
+  &:focus-visible {
+    outline-color: colors.$primary;
+  }
+}
+
+.btn-secondary {
+  background: colors.$secondary;
+  border: 1px solid colors.$secondary;
+  color: colors.$white;
+
+  &:active {
+    background-color: darken(colors.$secondary, 10%);
+    border-color: darken(colors.$secondary, 10%);
+  }
+
+  &:focus-visible {
+    outline-color: colors.$secondary;
+  }
+}
+
+.btn-info {
+  background: colors.$info;
+  border: 1px solid colors.$info;
+  color: colors.$white;
+
+  &:active {
+    background-color: darken(colors.$info, 10%);
+    border-color: darken(colors.$info, 10%);
+  }
+
+  &:focus-visible {
+    outline-color: colors.$info;
+  }
+}
+
+.btn-success {
+  background: colors.$success;
+  border: 1px solid colors.$success;
+  color: colors.$white;
+
+  &:active {
+    background-color: darken(colors.$success, 10%);
+    border-color: darken(colors.$success, 10%);
+  }
+
+  &:focus-visible {
+    outline-color: colors.$success;
+  }
+}
+
+.btn-warning {
+  background: colors.$warning;
+  border: 1px solid colors.$warning;
+  color: colors.$title;
+
+  &:active {
+    background-color: darken(colors.$warning, 10%);
+    border-color: darken(colors.$warning, 10%);
+  }
+
+  &:focus-visible {
+    outline-color: colors.$warning;
+  }
+}
+
+.btn-error {
+  background: colors.$error;
+  border: 1px solid colors.$error;
+  color: colors.$white;
+
+  &:active {
+    background-color: darken(colors.$error, 10%);
+    border-color: darken(colors.$error, 10%);
+  }
+
+  &:focus-visible {
+    outline-color: colors.$error;
+  }
+}
+
+/* OUTLINED BUTTONS STYLES */
+
+.btn-outlined-primary {
+  background: transparent;
+  border: 1px solid colors.$primary;
+  color: colors.$primary;
+
+  &:hover {
+    background: colors.$primary;
+    color: colors.$white;
+  }
+}
+
+.btn-outlined-secondary {
+  background: transparent;
+  border: 1px solid colors.$secondary;
+  color: colors.$secondary;
+
+  &:hover {
+    background: colors.$secondary;
+    color: colors.$white;
+  }
+}
+
+.btn-outlined-info {
+  background: transparent;
+  border: 1px solid colors.$info;
+  color: colors.$info;
+
+  &:hover {
+    background: colors.$info;
+    color: colors.$white;
+  }
+}
+
+.btn-outlined-success {
+  background: transparent;
+  border: 1px solid colors.$success;
+  color: colors.$success;
+
+  &:hover {
+    background: colors.$success;
+    color: colors.$white;
+  }
+}
+
+.btn-outlined-warning {
+  background: transparent;
+  border: 1px solid colors.$warning;
+  color: colors.$warning;
+
+  &:hover {
+    background: colors.$warning;
+    color: colors.$title;
+  }
+}
+
+.btn-outlined-error {
+  background: transparent;
+  border: 1px solid colors.$error;
+  color: colors.$error;
+
+  &:hover {
+    background: colors.$error;
+    color: colors.$white;
+  }
+}

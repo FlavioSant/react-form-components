@@ -1,0 +1,51 @@
+@use '../styles/colors.scss';
+@use '../styles/utils/fields.utilities.scss';
+
+.textarea-section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.textarea-field {
+  display: flex;
+  align-items: center;
+
+  background: colors.$white;
+  border: 1px solid colors.$gray300;
+  border-radius: 0.5rem;
+  color: colors.$gray500;
+  font-size: 1rem;
+  font-weight: 500;
+
+  overflow: hidden;
+  outline: 0;
+
+  width: 100%;
+  min-height: 120px;
+  max-height: 250px;
+  padding: 0.5rem;
+
+  resize: vertical;
+
+  &:hover {
+    border-color: colors.$gray400;
+  }
+
+  &::placeholder {
+    color: colors.$gray300;
+  }
+
+  &:focus {
+    border: 1px solid colors.$gray400;
+  }
+
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 30px white inset;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+  }
+}

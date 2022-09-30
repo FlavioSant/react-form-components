@@ -1,0 +1,66 @@
+@use 'sass:map';
+@use '../styles/colors.scss';
+@use '../styles/typography.scss';
+@import '../styles/utils/fields.utilities.scss';
+
+.input-section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-field-container {
+  display: flex;
+  align-items: center;
+
+  background: colors.$white;
+  border: 1px solid colors.$gray300;
+  border-radius: 4px;
+  color: colors.$gray300;
+
+  overflow: hidden;
+  padding-right: 0.5rem;
+  width: 100%;
+
+  &:hover {
+    border-color: colors.$gray400;
+  }
+
+  svg:hover {
+    color: colors.$gray400;
+  }
+}
+
+.input-field {
+  background: transparent;
+  border: 0;
+  color: colors.$gray500;
+  font-size: map.get(typography.$sizes, 'b1');
+  font-weight: map.get(typography.$weights, 'b1');
+  line-height: map.get(typography.$line-heights, 'b1');
+  padding: 0.5rem 0.75rem;
+  outline: 0;
+  width: 100%;
+
+  &::placeholder {
+    color: colors.$gray300;
+  }
+
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 30px white inset;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+  }
+}
+
+.is-whatsapp {
+  color: colors.$success;
+
+  &:hover {
+    color: colors.$success;
+    filter: brightness(1.15);
+  }
+}

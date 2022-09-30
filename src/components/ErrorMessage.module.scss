@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '../styles/colors.scss';
+@use '../styles/typography.scss';
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  color: colors.$error;
+  font-size: map.get(typography.$sizes, 'caption1');
+  font-weight: map.get(typography.$weights, 'caption1');
+  line-height: map.get(typography.$line-heights, 'caption1');
+  margin-top: 0.3rem;
+}

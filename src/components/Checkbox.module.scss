@@ -1,0 +1,71 @@
+@use 'sass:map';
+@use '../styles/colors.scss';
+@use '../styles/typography.scss';
+
+.checkbox-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.checkbox-label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  color: colors.$text;
+  font-size: map.get(typography.$sizes, 'b4');
+  font-weight: map.get(typography.$weights, 'b4');
+  line-height: map.get(typography.$line-heights, 'b4');
+
+  &:hover input ~ span {
+    border-color: colors.$gray500;
+  }
+
+  input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  input:checked ~ span {
+    background-color: colors.$primary;
+  }
+
+  input:checked ~ span:after {
+    display: block;
+  }
+
+  input:focus ~ span {
+    border-color: colors.$primary;
+  }
+
+  /* CHECK MARKER */
+  span:after {
+    width: 4px;
+    height: 8px;
+    margin-left: 0.05rem;
+    border: solid colors.$white;
+    border-width: 0 0.15rem 0.15rem 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20px;
+    min-width: 20px;
+    margin-right: 0.25rem;
+    border: 1px solid colors.$gray400;
+    border-radius: 0.25rem;
+    background-color: colors.$white;
+
+    &:after {
+      content: '';
+      display: none;
+    }
+  }
+}

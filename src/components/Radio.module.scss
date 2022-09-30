@@ -1,0 +1,71 @@
+@use 'sass:map';
+@use '../styles/colors.scss';
+@use '../styles/typography.scss';
+@import '../styles/utils/fields.utilities.scss';
+
+.radio-section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.radio-option-container {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: map.get(typography.$sizes, 'b3');
+  font-weight: map.get(typography.$weights, 'b3');
+  line-height: map.get(typography.$line-heights, 'b3');
+  width: 100%;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-size: map.get(typography.$sizes, 'b1');
+    font-weight: map.get(typography.$weights, 'b1');
+    line-height: map.get(typography.$line-heights, 'b1');
+    margin-left: 0.3rem;
+  }
+
+  input[type='radio'] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: colors.$white;
+    border-radius: 50%;
+    border: 1px solid colors.$gray300;
+
+    width: 20px;
+    height: 20px;
+
+    outline: 0;
+    -webkit-appearance: none;
+
+    &:hover {
+      border-color: colors.$secondary;
+    }
+
+    &:after {
+      border-radius: 50%;
+      content: '';
+      width: 14px;
+      height: 14px;
+    }
+
+    &:checked:after {
+      background-color: colors.$secondary;
+    }
+  }
+}

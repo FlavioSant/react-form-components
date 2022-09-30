@@ -1,0 +1,90 @@
+@use '../../styles/colors.scss';
+@use '../../styles/breakpoints.scss';
+
+@keyframes modalScale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  animation: modalScale 0.3s ease-in-out;
+
+  background: colors.$white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 12px rgba(20, 44, 75, 0.5);
+  padding: 1rem;
+
+  max-width: 1140px;
+  overflow: auto;
+
+  width: 100%;
+
+  @include breakpoints.and-up(lg) {
+    padding: 2rem;
+  }
+}
+
+.modal-xl {
+  max-width: 1140px;
+}
+
+.modal-lg {
+  max-width: 800px;
+}
+
+.modal-sm {
+  max-width: 500px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    margin: 0;
+  }
+
+  button {
+    border: 0;
+    background: transparent;
+    font-size: 0;
+    color: colors.$primary;
+    transition: color 0.2s;
+
+    &:hover {
+      color: colors.$red;
+    }
+  }
+}
+
+.modal-main {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 1rem;
+  max-height: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(20, 44, 75, 0.5);
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,41 @@
+@use 'sass:map';
+@use '../styles/colors.scss';
+@use '../styles/typography.scss';
+@import '../styles/utils/fields.utilities.scss';
+
+.select-section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.select-field {
+  display: flex;
+  align-items: center;
+
+  background: colors.$white;
+  border: 1px solid colors.$gray300;
+  border-radius: 4px;
+  color: colors.$gray500;
+  font-size: map.get(typography.$sizes, 'b1');
+  font-weight: map.get(typography.$weights, 'b1');
+  line-height: map.get(typography.$line-heights, 'b1');
+  padding: 0.65rem 0.75rem;
+  overflow: hidden;
+  outline: 0;
+
+  width: 100%;
+
+  &:hover {
+    border-color: colors.$gray400;
+  }
+
+  &:focus {
+    border: 1px solid colors.$gray400;
+  }
+
+  option {
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,48 @@
+@use 'sass:map';
+@use '../styles/colors.scss';
+@use '../styles/typography.scss';
+@import '../styles/utils/fields.utilities.scss';
+
+.input-section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+
+  background: colors.$white;
+  border: 1px solid colors.$gray300;
+  border-radius: 4px;
+  color: colors.$gray500;
+  font-size: map.get(typography.$sizes, 'b1');
+  font-weight: map.get(typography.$weights, 'b1');
+  line-height: map.get(typography.$line-heights, 'b1');
+  padding: 0.5rem 0.75rem;
+  overflow: hidden;
+  outline: 0;
+  width: 100%;
+
+  &:not(:disabled):hover {
+    border-color: colors.$gray400;
+  }
+
+  &::placeholder {
+    color: colors.$gray300;
+  }
+
+  &:focus {
+    border-color: colors.$gray400;
+  }
+
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 30px white inset;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+  }
+}

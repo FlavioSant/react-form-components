@@ -1,0 +1,45 @@
+.tree-item-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+
+  list-style: none;
+
+  ul {
+    margin: 0.5rem 0;
+  }
+}
+
+.tree-item {
+  ul {
+    display: none;
+    margin-left: 2rem;
+  }
+}
+
+.tree-item-chevron-button {
+  background: transparent;
+  border: none;
+  font-size: 0;
+
+  svg {
+    transition: transform 0.2s;
+  }
+
+  &.rotate-icon {
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.tree-item-description {
+  display: flex;
+  align-items: center;
+}
+
+.is-open {
+  > ul {
+    display: flex;
+  }
+}

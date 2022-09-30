@@ -1,0 +1,75 @@
+@use 'sass:map';
+@use '../styles/colors.scss';
+@use '../styles/typography.scss';
+@import '../styles/utils/fields.utilities.scss';
+
+.multi-select-section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.multi-select-field {
+  display: flex;
+  align-items: center;
+
+  background: colors.$white;
+  border: 1px solid colors.$gray300;
+  border-radius: 4px;
+  color: colors.$gray500;
+  font-size: map.get(typography.$sizes, 'b1');
+  font-weight: map.get(typography.$weights, 'b1');
+  line-height: map.get(typography.$line-heights, 'b1');
+  padding: 0.65rem 0.75rem;
+  overflow: hidden;
+  outline: 0;
+
+  width: 100%;
+
+  &:hover {
+    border-color: colors.$gray400;
+  }
+
+  &:focus {
+    border: 1px solid colors.$gray400;
+  }
+
+  option {
+    border-radius: 0;
+  }
+}
+
+.selected-options-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.selected-option-item {
+  display: flex;
+  align-items: center;
+  column-gap: 0.3rem;
+
+  background: colors.$gray400;
+  border-radius: 0.2rem;
+  color: colors.$white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0.3rem;
+  padding-left: 0.375rem;
+
+  button {
+    display: flex;
+    align-items: center;
+
+    background: #fecaca;
+    border: 0;
+    border-radius: 0 0.2rem 0.2rem 0;
+    color: #dc2626;
+    padding: 0.2rem;
+
+    &:hover {
+      background: #fca5a5;
+    }
+  }
+}

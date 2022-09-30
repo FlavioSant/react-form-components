@@ -1,0 +1,32 @@
+@keyframes overlayOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: overlayOpacity 0.2s ease-in-out;
+  background: rgba(20, 44, 75, 0.5);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  padding: 1rem;
+  overflow-y: auto;
+
+  transition: background 0.3s;
+
+  cursor: default;
+
+  z-index: 99;
+}
