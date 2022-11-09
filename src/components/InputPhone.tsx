@@ -31,41 +31,39 @@ export const InputPhone = ({
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <section className={styles['input-section']}>
-      <Label htmlFor={name}>
-        {label}
-        <div
+    <div className={styles['input']}>
+      <Label htmlFor={name}>{label}</Label>
+      <div
+        className={classNames(
+          styles['input-field-container'],
+          isFocused ? styles['is-focused'] : '',
+          !!error ? styles['is-errored'] : '',
+        )}
+      >
+        <input
+          id={name}
+          type="tel"
           className={classNames(
-            styles['input-field-container'],
-            isFocused ? styles['is-focused'] : '',
+            styles['input-field'],
             !!error ? styles['is-errored'] : '',
           )}
-        >
-          <input
-            id={name}
-            type="tel"
-            className={classNames(
-              styles['input-field'],
-              !!error ? styles['is-errored'] : '',
-            )}
-            name={name}
-            maxLength={15}
-            value={phoneMask(value)}
-            onChange={e =>
-              onChange && onChange(e.target.value.replace(/\D+/g, ''), e)
-            }
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-            {...rest}
-          />
-          <WhatsappLogo
-            size={20}
-            className={isWhatsapp ? `${styles['is-whatsapp']}` : ''}
-            onClick={toggleWhatsapp}
-          />
-        </div>
-        {error && <ErrorMessage error={error} />}
-      </Label>
-    </section>
+          name={name}
+          maxLength={15}
+          value={phoneMask(value)}
+          onChange={e =>
+            onChange && onChange(e.target.value.replace(/\D+/g, ''), e)
+          }
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          {...rest}
+        />
+        <WhatsappLogo
+          size={20}
+          className={isWhatsapp ? `${styles['is-whatsapp']}` : ''}
+          onClick={toggleWhatsapp}
+        />
+      </div>
+      {error && <ErrorMessage error={error} />}
+    </div>
   );
 };

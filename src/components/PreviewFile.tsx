@@ -14,12 +14,7 @@ export const PreviewFile = ({
   files,
   removeFiles,
 }: PreviewFileProps) => (
-  <section
-    className={classNames(
-      styles['preview-file-section'],
-      className && className,
-    )}
-  >
+  <div className={classNames(styles['preview-file'], className)}>
     {files.map((file, index) => (
       <div key={index} className={styles['preview-file-item']}>
         {file.mimetype.includes('image') ? (
@@ -46,5 +41,5 @@ export const PreviewFile = ({
         )}
       </div>
     ))}
-  </section>
+  </div>
 );

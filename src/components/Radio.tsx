@@ -31,7 +31,7 @@ export const Radio = ({
   ...rest
 }: RadioProps) => {
   return (
-    <section className={styles['radio-section']}>
+    <div className={styles['radio']}>
       {label && <p className={styles['radio-label']}>{label}</p>}
 
       <div className={styles['radio-option-container']}>
@@ -56,6 +56,6 @@ export const Radio = ({
         })}
       </div>
       {error && <ErrorMessage error={error} />}
-    </section>
+    </div>
   );
 };

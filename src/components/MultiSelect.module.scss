@@ -3,17 +3,26 @@
 @use '../styles/typography.scss';
 @import '../styles/utils/fields.utilities.scss';
 
-.multi-select-section {
+.multi-select {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
 }
 
-.multi-select-field {
+.multi-select-field-container {
   display: flex;
   align-items: center;
+  width: 100%;
 
+  svg {
+    margin-left: -1.75rem;
+    pointer-events: none;
+  }
+}
+
+.multi-select-field {
+  appearance: none;
   background: colors.$white;
   border: 1px solid colors.$gray300;
   border-radius: 4px;
@@ -21,7 +30,7 @@
   font-size: map.get(typography.$sizes, 'b1');
   font-weight: map.get(typography.$weights, 'b1');
   line-height: map.get(typography.$line-heights, 'b1');
-  padding: 0.65rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   overflow: hidden;
   outline: 0;
 
@@ -62,14 +71,14 @@
     display: flex;
     align-items: center;
 
-    background: #fecaca;
+    background: lighten(colors.$error, 28%);
     border: 0;
     border-radius: 0 0.2rem 0.2rem 0;
-    color: #dc2626;
+    color: colors.$error;
     padding: 0.2rem;
 
     &:hover {
-      background: #fca5a5;
+      background: lighten(colors.$error, 25%);
     }
   }
 }

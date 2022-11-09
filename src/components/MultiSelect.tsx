@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { ChangeEvent, InputHTMLAttributes, MouseEvent } from 'react';
-import { X } from 'phosphor-react';
+import { CaretDown, X } from 'phosphor-react';
 import { Label } from './Label';
 import { ErrorMessage } from './ErrorMessage';
 
@@ -46,9 +46,10 @@ export const MultiSelect = ({
   };
 
   return (
-    <section className={styles['multi-select-section']}>
-      <Label htmlFor={name}>
-        {label}
+    <div className={styles['multi-select']}>
+      <Label htmlFor={name}>{label}</Label>
+
+      <div className={styles['multi-select-field-container']}>
         <select
           id={name}
           name={name}
@@ -67,35 +68,35 @@ export const MultiSelect = ({
           ))}
         </select>
 
-        {error && <ErrorMessage error={error} />}
+        <CaretDown size={16} />
+      </div>
 
-        <div className={styles['selected-options-container']}>
-          {values.map(value => {
-            const currentOption = options.find(
-              option => option.value === value,
-            );
+      {error && <ErrorMessage error={error} />}
 
-            return (
-              <div key={value} className={styles['selected-option-item']}>
-                {currentOption && currentOption.label}
-                <button
-                  type="button"
-                  title="Remover"
-                  onClick={e =>
-                    onChange &&
-                    onChange(
-                      values.filter(v => v !== value),
-                      e,
-                    )
-                  }
-                >
-                  <X size={18} />
-                </button>
-              </div>
-            );
-          })}
-        </div>
-      </Label>
-    </section>
+      <div className={styles['selected-options-container']}>
+        {values.map(value => {
+          const currentOption = options.find(option => option.value === value);
+
+          return (
+            <div key={value} className={styles['selected-option-item']}>
+              {currentOption && currentOption.label}
+              <button
+                type="button"
+                title="Remover"
+                onClick={e =>
+                  onChange &&
+                  onChange(
+                    values.filter(v => v !== value),
+                    e,
+                  )
+                }
+              >
+                <X size={16} weight="bold" />
+              </button>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 };

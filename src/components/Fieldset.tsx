@@ -9,12 +9,7 @@ interface FieldsetProps {
 
 export const Fieldset = ({ children, className, legend }: FieldsetProps) => {
   return (
-    <fieldset
-      className={classNames(
-        styles['fieldset-container'],
-        className && className,
-      )}
-    >
+    <fieldset className={classNames(styles['fieldset-container'], className)}>
       <legend>{legend}</legend>
       {children}
     </fieldset>

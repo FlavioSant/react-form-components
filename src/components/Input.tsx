@@ -25,25 +25,21 @@ export const Input = ({
   ...rest
 }: InputProps) => {
   return (
-    <section
-      className={classNames(styles['input-section'], className && className)}
-    >
-      <Label htmlFor={name}>
-        {label}
-        <input
-          type="text"
-          className={classNames(
-            styles['input-field'],
-            !!error ? styles['is-errored'] : '',
-          )}
-          id={name}
-          name={name}
-          value={value}
-          onChange={e => onChange && onChange(e.target.value, e)}
-          {...rest}
-        />
-        {error && <ErrorMessage error={error} />}
-      </Label>
-    </section>
+    <div className={classNames(styles['input'], className)}>
+      <Label htmlFor={name}>{label}</Label>
+      <input
+        className={classNames(
+          styles['input-field'],
+          !!error ? styles['is-errored'] : '',
+        )}
+        type="text"
+        id={name}
+        name={name}
+        value={value}
+        onChange={e => onChange && onChange(e.target.value, e)}
+        {...rest}
+      />
+      {error && <ErrorMessage error={error} />}
+    </div>
   );
 };

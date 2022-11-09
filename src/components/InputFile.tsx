@@ -36,12 +36,7 @@ export const InputFile = ({
   };
 
   return (
-    <section
-      className={classNames(
-        styles['input-file-section'],
-        className && className,
-      )}
-    >
+    <div className={classNames(styles['input-file'], className)}>
       <label
         htmlFor={name}
         className={classNames(
@@ -59,6 +54,6 @@ export const InputFile = ({
           onChange={handleChange}
         />
       </label>
-    </section>
+    </div>
   );
 };

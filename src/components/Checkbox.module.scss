@@ -2,7 +2,7 @@
 @use '../styles/colors.scss';
 @use '../styles/typography.scss';
 
-.checkbox-section {
+.checkbox {
   display: flex;
   align-items: center;
   width: 100%;
@@ -19,7 +19,7 @@
   line-height: map.get(typography.$line-heights, 'b4');
 
   &:hover input ~ span {
-    border-color: colors.$gray500;
+    border-color: colors.$gray400;
   }
 
   input {
@@ -59,7 +59,7 @@
     min-height: 20px;
     min-width: 20px;
     margin-right: 0.25rem;
-    border: 1px solid colors.$gray400;
+    border: 1px solid colors.$gray300;
     border-radius: 0.25rem;
     background-color: colors.$white;
 

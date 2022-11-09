@@ -2,16 +2,17 @@ import classNames from 'classnames';
 import { InputHTMLAttributes, KeyboardEvent } from 'react';
 import styles from './Checkbox.module.scss';
 
-type CheckboxProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  'checked' | 'onChange' | 'type'
-> & {
+interface CheckboxProps
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'checked' | 'onChange' | 'type'
+  > {
   className?: string;
   name: string;
   label: string;
   checked: boolean;
   onChange?: (checked: boolean) => void;
-};
+}
 
 export const Checkbox = ({
   className,
@@ -29,9 +30,7 @@ export const Checkbox = ({
   };
 
   return (
-    <section
-      className={classNames(styles['checkbox-section'], className && className)}
-    >
+    <div className={classNames(styles['checkbox'], className)}>
       <label htmlFor={name} className={styles['checkbox-label']}>
         <input
           type="checkbox"
@@ -44,6 +43,6 @@ export const Checkbox = ({
         <span />
         {label}
       </label>
-    </section>
+    </div>
   );
 };

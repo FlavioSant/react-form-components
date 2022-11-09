@@ -29,27 +29,23 @@ export const InputDateTimeLocal = ({
   ...rest
 }: InputDateTimeLocalProps) => {
   return (
-    <section
-      className={classNames(styles['input-section'], className && className)}
-    >
-      <Label htmlFor={name}>
-        {label}
-        <input
-          type="datetime-local"
-          className={classNames(
-            styles['input-field'],
-            !!error ? styles['is-errored'] : '',
-          )}
-          id={name}
-          name={name}
-          value={toDateTimeLocal(value)}
-          onChange={e =>
-            onChange && onChange(fromDateTimeLocal(e.target.value), e)
-          }
-          {...rest}
-        />
-        {error && <ErrorMessage error={error} />}
-      </Label>
-    </section>
+    <div className={classNames(styles['input'], className)}>
+      <Label htmlFor={name}>{label}</Label>
+      <input
+        className={classNames(
+          styles['input-field'],
+          !!error ? styles['is-errored'] : '',
+        )}
+        type="datetime-local"
+        id={name}
+        name={name}
+        value={toDateTimeLocal(value)}
+        onChange={e =>
+          onChange && onChange(fromDateTimeLocal(e.target.value), e)
+        }
+        {...rest}
+      />
+      {error && <ErrorMessage error={error} />}
+    </div>
   );
 };

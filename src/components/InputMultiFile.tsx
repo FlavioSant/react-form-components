@@ -37,12 +37,7 @@ export const InputMultiFile = ({
   };
 
   return (
-    <section
-      className={classNames(
-        styles['input-file-section'],
-        className && className,
-      )}
-    >
+    <div className={classNames(styles['input-file'], className)}>
       <Label
         htmlFor={name}
         className={classNames(
@@ -61,6 +56,6 @@ export const InputMultiFile = ({
           onChange={handleChange}
         />
       </Label>
-    </section>
+    </div>
   );
 };

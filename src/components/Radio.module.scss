@@ -3,7 +3,7 @@
 @use '../styles/typography.scss';
 @import '../styles/utils/fields.utilities.scss';
 
-.radio-section {
+.radio {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -51,10 +51,10 @@
     height: 20px;
 
     outline: 0;
-    -webkit-appearance: none;
+    appearance: none;
 
     &:hover {
-      border-color: colors.$secondary;
+      border-color: colors.$gray400;
     }
 
     &:after {

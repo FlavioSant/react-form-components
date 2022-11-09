@@ -30,7 +30,7 @@ export const Form = ({
     <form
       id={id}
       onSubmit={handleSubmit}
-      className={classNames(styles['form-container'], className && className)}
+      className={classNames(styles['form-container'], className)}
     >
       {children}
       {footerComponent && footerComponent}

@@ -29,39 +29,35 @@ export const InputPassword = ({
   const [inputType, setInputType] = useState<'text' | 'password'>('password');
 
   return (
-    <section
-      className={classNames(styles['input-section'], className && className)}
-    >
-      <Label htmlFor={name}>
-        {label}
-        <div
-          className={classNames(
-            styles['input-field-container'],
-            isFocused ? styles['is-focused'] : '',
-            !!error ? styles['is-errored'] : '',
-          )}
-        >
-          <input
-            type={inputType}
-            className={styles['input-field']}
-            id={name}
-            name={name}
-            value={value}
-            onChange={e => onChange && onChange(e.target.value, e)}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-            {...rest}
-          />
+    <div className={classNames(styles['input'], className)}>
+      <Label htmlFor={name}>{label}</Label>
+      <div
+        className={classNames(
+          styles['input-field-container'],
+          isFocused ? styles['is-focused'] : '',
+          !!error ? styles['is-errored'] : '',
+        )}
+      >
+        <input
+          type={inputType}
+          className={styles['input-field']}
+          id={name}
+          name={name}
+          value={value}
+          onChange={e => onChange && onChange(e.target.value, e)}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          {...rest}
+        />
 
-          {inputType === 'password' ? (
-            <EyeSlash size={20} onClick={() => setInputType('text')} />
-          ) : (
-            <Eye size={20} onClick={() => setInputType('password')} />
-          )}
-        </div>
+        {inputType === 'password' ? (
+          <EyeSlash size={20} onClick={() => setInputType('text')} />
+        ) : (
+          <Eye size={20} onClick={() => setInputType('password')} />
+        )}
+      </div>
 
-        {error && <ErrorMessage error={error} />}
-      </Label>
-    </section>
+      {error && <ErrorMessage error={error} />}
+    </div>
   );
 };

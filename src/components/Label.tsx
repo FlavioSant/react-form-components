@@ -11,7 +11,7 @@ export const Label = ({ className, children, htmlFor }: LabelProps) => {
   return (
     <label
       htmlFor={htmlFor}
-      className={classNames(styles['label-container'], className && className)}
+      className={classNames(styles['label-container'], className)}
     >
       {children}
     </label>

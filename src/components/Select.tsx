@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { CaretDown } from 'phosphor-react';
 import { ChangeEvent, InputHTMLAttributes } from 'react';
 import { Label } from './Label';
 import { ErrorMessage } from './ErrorMessage';
@@ -31,11 +32,10 @@ export const Select = ({
   ...rest
 }: SelectProps) => {
   return (
-    <section
-      className={classNames(styles['select-section'], className && className)}
-    >
-      <Label htmlFor={name}>
-        {label}
+    <div className={classNames(styles['select'], className)}>
+      <Label htmlFor={name}>{label}</Label>
+
+      <div className={styles['select-field-container']}>
         <select
           className={classNames(
             styles['select-field'],
@@ -54,8 +54,11 @@ export const Select = ({
             </option>
           ))}
         </select>
-        {error && <ErrorMessage error={error} />}
-      </Label>
-    </section>
+
+        <CaretDown size={16} />
+      </div>
+
+      {error && <ErrorMessage error={error} />}
+    </div>
   );
 };

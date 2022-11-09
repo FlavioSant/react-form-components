@@ -27,24 +27,20 @@ export const Textarea = ({
   ...rest
 }: TextareaProps) => {
   return (
-    <section
-      className={classNames(styles['textarea-section'], className && className)}
-    >
-      <Label htmlFor={name}>
-        {label}
-        <textarea
-          className={classNames(
-            styles['textarea-field'],
-            !!error ? styles['is-errored'] : '',
-          )}
-          id={name}
-          name={name}
-          value={value}
-          onChange={e => onChange && onChange(e.target.value, e)}
-          {...rest}
-        />
-        {error && <ErrorMessage error={error} />}
-      </Label>
-    </section>
+    <div className={classNames(styles['textarea'], className)}>
+      <Label htmlFor={name}>{label}</Label>
+      <textarea
+        className={classNames(
+          styles['textarea-field'],
+          !!error ? styles['is-errored'] : '',
+        )}
+        id={name}
+        name={name}
+        value={value}
+        onChange={e => onChange && onChange(e.target.value, e)}
+        {...rest}
+      />
+      {error && <ErrorMessage error={error} />}
+    </div>
   );
 };

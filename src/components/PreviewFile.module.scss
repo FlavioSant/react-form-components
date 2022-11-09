@@ -1,7 +1,7 @@
 @use '../styles/colors.scss';
 @use '../styles/breakpoints.scss';
 
-.preview-file-section {
+.preview-file {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;

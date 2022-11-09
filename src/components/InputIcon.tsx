@@ -28,33 +28,29 @@ export const InputIcon = ({
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <section
-      className={classNames(styles['input-section'], className && className)}
-    >
-      <Label htmlFor={name}>
-        {label}
-        <div
-          className={classNames(
-            styles['input-field-container'],
-            isFocused ? styles['is-focused'] : '',
-            !!error ? styles['is-errored'] : '',
-          )}
-        >
-          <input
-            type="text"
-            className={styles['input-field']}
-            id={name}
-            name={name}
-            value={value}
-            onChange={e => onChange && onChange(e.target.value, e)}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-            {...rest}
-          />
-          <Icon />
-        </div>
-        {error && <ErrorMessage error={error} />}
-      </Label>
-    </section>
+    <div className={classNames(styles['input'], className)}>
+      <Label htmlFor={name}>{label}</Label>
+      <div
+        className={classNames(
+          styles['input-field-container'],
+          isFocused ? styles['is-focused'] : '',
+          !!error ? styles['is-errored'] : '',
+        )}
+      >
+        <input
+          type="text"
+          className={styles['input-field']}
+          id={name}
+          name={name}
+          value={value}
+          onChange={e => onChange && onChange(e.target.value, e)}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          {...rest}
+        />
+        <Icon />
+      </div>
+      {error && <ErrorMessage error={error} />}
+    </div>
   );
 };
